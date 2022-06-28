@@ -68,7 +68,7 @@ func bfs(_ sea: [[Int]], _ visited: inout [[Bool]], _ i: Int, _ j: Int) {
             for d in dir {
                 let loc: [Int] = popRoom.getLoc()
                 let newX: Int = loc[0]+d[0], newY: Int = loc[1]+d[1]
-                if checkBorder(newX, newY) && !visited[newX][newY] && sea[newX][newY] != 1{
+                if checkBorder(newX, newY) && !visited[newX][newY] && sea[newX][newY] != 1 && popRoom.getDis() < maxLen{
                     visited[newX][newY] = true
                     queue.enqueue(Room([newX,newY], popRoom.getDis() + 1))
                     disBoard[newX][newY] = min(disBoard[newX][newY], popRoom.getDis() + 1)
