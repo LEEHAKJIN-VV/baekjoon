@@ -123,11 +123,7 @@ func bfs(_ n: Int, _ space: inout [[Int]]) -> Int {
                         continue
                     }
                     
-                    if removeLoc.contains(-1) { // 초기
-                        removeLoc = [x,y]
-                        removeSize = space[x][y]
-                        movedTime = curDis
-                    } else if findFishLoc(cur: [x,y], pre: removeLoc) { // 현재 위치가 더 좋다
+                    if removeLoc.contains(-1) || findFishLoc(cur: [x,y], pre: removeLoc) { // 초기
                         removeLoc = [x,y]
                         removeSize = space[x][y]
                         movedTime = curDis
@@ -200,7 +196,10 @@ func binarySearch(_ data: [Int], _ target: Int) -> Int{
 
 // true -> 현재 물고기 위치가 더 가깝다 flase -> 이전 물고기 위치가 더 좋다
 func findFishLoc(cur curLoc: [Int], pre preLoc: [Int]) -> Bool {
-    // sharkLoc와 현재 먹을수 있는 물고기들의 위치를 비교해야함
+    if preLoc.contains(-1) {
+        return true
+    }
+    
     if curLoc[0] < preLoc[0] { // 현재 위치가 더 위쪽
         return true
     } else if curLoc[0] == preLoc[0] { // 같은 줄에 있는 경우
