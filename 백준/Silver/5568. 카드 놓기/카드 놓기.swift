@@ -19,6 +19,7 @@ func permutation(_ data: inout [String], _ n: Int, _ k: Int, _ r: Int) {
             tmp += data[i]
         }
         cardSet.insert(tmp)
+        return
     }
     
     for i in k..<n {
@@ -26,4 +27,5 @@ func permutation(_ data: inout [String], _ n: Int, _ k: Int, _ r: Int) {
         permutation(&data, n, k+1,r)
         data.swapAt(i, k)
     }
+    return
 }
