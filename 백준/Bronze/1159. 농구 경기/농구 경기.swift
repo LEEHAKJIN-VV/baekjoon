@@ -16,10 +16,8 @@ let enterPlayer = playerDict.filter{
 if enterPlayer.count < 1 {
     print("PREDAJA")
 } else {
-    var answer: String = ""
     for name in enterPlayer.keys.sorted() {
-        answer += name
+        print(name, terminator: "")
     }
-    print(answer)
 }
 
