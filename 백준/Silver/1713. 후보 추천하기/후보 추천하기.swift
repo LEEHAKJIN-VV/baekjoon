@@ -27,8 +27,7 @@ for finalCandidate in people.sorted(by: {$0[0] < $1[0] }) {
     print(finalCandidate[0], terminator: " ")
 }
 
-// 액자 업데이트
-// popLast가 제일 마지막이니깐 스택처럼 배열 끝만 제거하자
+// 액자 업데이트 제거해야할 후보를 액자의 제일 마지막으로 이동
 func updateFrame(_ candidate: inout [[Int]]) {
     candidate.sort(by: {
         c1, c2 in
