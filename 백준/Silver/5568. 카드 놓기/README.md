@@ -8,7 +8,7 @@
 
 ### 분류
 
-브루트포스 알고리즘(bruteforcing), 자료 구조(data_structures), 해시를 사용한 집합과 맵(hash_set)
+브루트포스 알고리즘(bruteforcing), 자료 구조(data_structures), 해시를 사용한 집합과 맵(hash_set), 재귀(recursion)
 
 ### 문제 설명
 
